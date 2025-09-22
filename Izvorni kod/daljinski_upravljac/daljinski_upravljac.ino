@@ -70,7 +70,8 @@ void loop() {
   pkt[2] = (digitalRead(JS_SW)==LOW)?1:0;
 
   radio.stopListening();
-  (void)radio.write(pkt, PL, true); // true = NO-ACK (brz preklop) radio.startListening();
+  (void)radio.write(pkt, PL, true); // true = NO-ACK (brz preklop) 
+  radio.startListening();
 
   // 2) Čekanje telemetrije do ~20 ms (12B)
   bool got=false; int16_t ax=0,ay=0,az=0,gx=0,gy=0,gz=0; uint32_t t0 = micros();
