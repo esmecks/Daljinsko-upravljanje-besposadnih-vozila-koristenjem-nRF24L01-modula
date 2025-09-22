@@ -100,7 +100,8 @@ void loop() {
   display.println((int)pkt[2]); 
   display.print("TELE: "); 
   display.println(got ? "GOT" :
-  (millis()-lastRxMs>1000?"NO (1s+)":"NO")); if (got){
+  (millis()-lastRxMs>1000?"NO (1s+)":"NO")); 
+  if (got){
     display.print("AX:"); 
     display.print(ax); 
     display.print(" AY:"); 
