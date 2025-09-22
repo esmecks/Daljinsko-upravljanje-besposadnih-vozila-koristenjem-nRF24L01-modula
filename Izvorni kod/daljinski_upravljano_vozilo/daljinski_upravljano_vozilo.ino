@@ -95,7 +95,8 @@ if (millis() - lastCmdMs > 600) rotateMotor(0,0); // failsafe
       rotateMotor(constrain(th-st,-255,255), constrain(th+st,-255,255));
     }
 
-    // Telemetrija 12B (AX,AY,AZ,GX,GY,GZ) — int16 LE int16_t ax,ay,az,gx,gy,gz;
+    // Telemetrija 12B (AX,AY,AZ,GX,GY,GZ) — int16 LE 
+    int16_t ax,ay,az,gx,gy,gz;
     mpu.getAcceleration(&ax,&ay,&az); mpu.getRotation(&gx,&gy,&gz); uint8_t t[PL] = {
     (uint8_t)(ax&0xFF),(uint8_t)((ax>>8)&0xFF), (uint8_t)(ay&0xFF),(uint8_t)((ay>>8)&0xFF),
     
